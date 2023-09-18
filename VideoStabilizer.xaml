@@ -1,0 +1,83 @@
+﻿<Window x:Class="Multimedia.VideoStabilizer"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Multimedia"
+        xmlns:ext="clr-namespace:Multimedia.CustomMarkupExtensions"
+        xmlns:custom="clr-namespace:Multimedia.CustomControls"
+        mc:Ignorable="d"
+        Title="Video Stabilizer" SizeToContent="WidthAndHeight" WindowStyle="ThreeDBorderWindow" WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+
+    </Window.Resources>
+    <Grid x:Name="layout" Margin="0,0,0,0" Background="#FF5D0040">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="32"/>
+            <RowDefinition Height="16"/>
+            <RowDefinition Height="32"/>
+            <RowDefinition Height="32"/>
+            <RowDefinition Height="32"/>
+            <RowDefinition Height="32"/>
+            <RowDefinition Height="32"/>
+            <RowDefinition Height="24"/>
+            <RowDefinition Height="32"/>
+            <RowDefinition Height="360"/>
+            <RowDefinition Height="52"/>
+            <RowDefinition Height="12" />
+            <RowDefinition Height="48"/>
+            <RowDefinition Height="16"/>
+
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="440"/>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="32"/>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="440"/>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Button x:Name="StabilizeButton" Click="Stabilize" Content="Stabilize video" Grid.ColumnSpan="9" FontSize="22" IsEnabled="{Binding Ready}"/>
+        <ProgressBar Name="StabilizingProgressBar" Grid.ColumnSpan="9" Grid.Row="1"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Top" Height="29" Width="540" Grid.ColumnSpan="2" FontSize="20" Foreground="White" Text="Input video path" Cursor="IBeam"/>
+        <TextBox Name="InputPathTextBox" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Center" Grid.Row="3" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="552" Height="32" Cursor="IBeam" VerticalContentAlignment="Center" Padding="16,0,32,0" FontSize="14" IsReadOnly="True" IsUndoEnabled="False"/>
+        <Button Grid.Column="3" Content="Select file" HorizontalAlignment="Center" Height="32" Grid.Row="3" VerticalAlignment="Center" Width="106" Click="ChooseInputPath" FontSize="16"/>
+        <TextBlock Grid.Column="5" HorizontalAlignment="Left" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Center" Height="32" Width="540" Grid.ColumnSpan="2" FontSize="20" Foreground="White" Text="Keypoint detection algorithm for video stabilization"/>
+        <ComboBox Name="AlgorithmSelector" Grid.Column="5" Grid.Row="3" VerticalAlignment="Center" Height="32" Grid.ColumnSpan="2" SelectedIndex="0" FontSize="16" SelectionChanged="SwitchKPDAlgorithm"
+                  ItemsSource="{Binding Source={ext:EnumBindingSource {x:Type local:KPDAlgorithm}}}"/>
+
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Grid.Row="5" TextWrapping="Wrap" VerticalAlignment="Center" Height="32" Width="540" Grid.ColumnSpan="2" FontSize="20" Foreground="White" Text="Output video path"/>
+        <TextBox Name="OutputPathTextBox" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Center" Grid.Row="6" TextWrapping="Wrap" VerticalAlignment="Center" Width="552" Height="32" Cursor="IBeam" VerticalContentAlignment="Center" Padding="16,0,32,0" FontSize="14"/>
+        <Button Grid.Column="3" Content="Choose path" HorizontalAlignment="Center" Height="32" Grid.Row="6" VerticalAlignment="Center" Width="106" Click="ChooseOutputPath" FontSize="16"/>
+        <TextBlock Grid.Column="5" HorizontalAlignment="Left" Grid.Row="5" TextWrapping="Wrap" VerticalAlignment="Center" Height="32" Width="540" Grid.ColumnSpan="2" FontSize="20" Foreground="White" Text="Video stabilization quality assessment metric"/>
+        <ComboBox Name="MetricSelector" Grid.Column="5" Grid.ColumnSpan="2" Grid.Row="6" VerticalAlignment="Center" Height="32" FontSize="16" SelectedIndex="0" SelectionChanged="SwitchVSQAMetric"
+                  ItemsSource="{Binding Source={ext:EnumBindingSource {x:Type local:VSQAMetric}}}"/>
+
+        <custom:VideoPlayer x:Name="NotStabilizedVideoPlayer" Grid.Column="1" Grid.Row="9" Grid.RowSpan="2" Grid.ColumnSpan="3"/>
+        <custom:VideoPlayer x:Name="StabilizedVideoPlayer" Grid.Column="5" Grid.Row="9" Grid.ColumnSpan="3" Grid.RowSpan="2"/>
+
+        <TextBlock Grid.Column="2" HorizontalAlignment="Center" Grid.Row="8" TextWrapping="Wrap" VerticalAlignment="Center" Height="32" Width="440" FontSize="20" Foreground="White" TextAlignment="Center"><Run Language="it-it" Text="Not stabilized"/></TextBlock>
+        <TextBlock Grid.Column="6" HorizontalAlignment="Center" Grid.Row="8" TextWrapping="Wrap" VerticalAlignment="Center" Height="32" Width="440" FontSize="20" Foreground="White" TextAlignment="Center"><Run Language="it-it" Text="Stabilized"/></TextBlock>
+        <Rectangle Grid.Column="4" HorizontalAlignment="Center" Height="444" Grid.RowSpan="3" Grid.Row="8" VerticalAlignment="Center" Width="12" Fill="#FFC8C8C8" RenderTransformOrigin="0.5,0.5">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <Rectangle Height="12" Grid.Row="7" Fill="#FFC8C8C8" Grid.ColumnSpan="9"/>
+        <Rectangle Height="12" Grid.Row="11" Fill="#FFC8C8C8" Grid.ColumnSpan="9"/>
+        <Button Visibility="{Binding Completed}" Grid.Column="7" Content="Plot trajectory" HorizontalAlignment="Center" Margin="0,24,0,0" Grid.Row="12" VerticalAlignment="Top" Width="100" Height="24" Click="PlotTrajectory"/>
+        <Button Visibility="{Binding Completed}" Grid.Column="5" Content="Plot transforms" HorizontalAlignment="Center" Margin="0,24,0,0" Grid.Row="12" VerticalAlignment="Top" Width="100" Height="24" Click="PlotTransforms"/>
+        <TextBlock Visibility="{Binding Completed}" x:Name="MetricInputValue" Grid.Column="2" Grid.Row="12" Width="440" FontSize="14" Foreground="White" TextAlignment="Center" TextWrapping="Wrap" Margin="0,24,0,0" Height="24" Text="MetricInputValue"/>
+        <TextBlock Visibility="{Binding Completed}" x:Name="MetricOutputValue" Grid.Column="6" Grid.Row="12" Width="440" FontSize="14" Foreground="White" TextAlignment="Center" TextWrapping="Wrap" Margin="0,23,0,1" Height="24" Text="MetricOutputValue"/>
+    </Grid>
+</Window>
+    
+   

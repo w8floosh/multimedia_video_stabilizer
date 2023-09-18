@@ -1,0 +1,12 @@
+C:\Users\Martin\source\repos\Multimedia\bin\Release\net6.0-windows\publish\Resources\video_stabilizer.py
+C:\Users\Martin\source\repos\Multimedia\bin\Release\net6.0-windows\publish\Multimedia.exe
+C:\Users\Martin\source\repos\Multimedia\bin\Release\net6.0-windows\publish\Multimedia.dll
+C:\Users\Martin\source\repos\Multimedia\bin\Release\net6.0-windows\publish\Multimedia.deps.json
+C:\Users\Martin\source\repos\Multimedia\bin\Release\net6.0-windows\publish\Multimedia.runtimeconfig.json
+C:\Users\Martin\source\repos\Multimedia\bin\Release\net6.0-windows\publish\Multimedia.pdb
+C:\Users\Martin\source\repos\Multimedia\bin\Release\net6.0-windows\publish\OpenCvSharp.dll
+C:\Users\Martin\source\repos\Multimedia\bin\Release\net6.0-windows\publish\runtimes\win-x64\native\OpenCvSharpExtern.dll
+C:\Users\Martin\source\repos\Multimedia\bin\Release\net6.0-windows\publish\runtimes\win-x64\native\opencv_videoio_ffmpeg480_64.dll
+C:\Users\Martin\source\repos\Multimedia\bin\Release\net6.0-windows\publish\runtimes\win-x86\native\OpenCvSharpExtern.dll
+C:\Users\Martin\source\repos\Multimedia\bin\Release\net6.0-windows\publish\runtimes\win-x86\native\opencv_videoio_ffmpeg480.dll
+C:\Users\Martin\source\repos\Multimedia\bin\Release\net6.0-windows\publish\Python.Runtime.dll

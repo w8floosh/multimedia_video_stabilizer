@@ -1,0 +1,99 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "OpenCvSharp4/4.8.0.20230708": {
+        "dependencies": {
+          "System.Memory": "4.5.5",
+          "System.Runtime.CompilerServices.Unsafe": "6.0.0"
+        },
+        "runtime": {
+          "lib/net6.0/OpenCvSharp.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "OpenCvSharp4.runtime.win/4.8.0.20230708": {
+        "runtimeTargets": {
+          "runtimes/win-x64/native/OpenCvSharpExtern.dll": {
+            "rid": "win-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/win-x64/native/opencv_videoio_ffmpeg480_64.dll": {
+            "rid": "win-x64",
+            "assetType": "native",
+            "fileVersion": "2023.6.0.0"
+          },
+          "runtimes/win-x86/native/OpenCvSharpExtern.dll": {
+            "rid": "win-x86",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/win-x86/native/opencv_videoio_ffmpeg480.dll": {
+            "rid": "win-x86",
+            "assetType": "native",
+            "fileVersion": "2023.6.0.0"
+          }
+        }
+      },
+      "OpenCvSharp4.Windows/4.8.0.20230708": {
+        "dependencies": {
+          "OpenCvSharp4": "4.8.0.20230708",
+          "OpenCvSharp4.runtime.win": "4.8.0.20230708"
+        }
+      },
+      "System.Memory/4.5.5": {},
+      "System.Runtime.CompilerServices.Unsafe/6.0.0": {
+        "runtime": {
+          "lib/net6.0/System.Runtime.CompilerServices.Unsafe.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.21.52210"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "OpenCvSharp4/4.8.0.20230708": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-MmZqvNUJuTUWQfkyXN1NOxJjx6JNfaedMOnY0dAdP5zgaKMAsxwwX5pkZl/F40JheSo3oMJhI7nhDC3kh7/ISQ==",
+      "path": "opencvsharp4/4.8.0.20230708",
+      "hashPath": "opencvsharp4.4.8.0.20230708.nupkg.sha512"
+    },
+    "OpenCvSharp4.runtime.win/4.8.0.20230708": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-V9zbVQXazSSoEG04nF1KEkxfY62WMQAcKAlDe7xgkNErY7WQZzEcj8dMEuHXQMaDr45jPvrJi50SQroi+w4wNw==",
+      "path": "opencvsharp4.runtime.win/4.8.0.20230708",
+      "hashPath": "opencvsharp4.runtime.win.4.8.0.20230708.nupkg.sha512"
+    },
+    "OpenCvSharp4.Windows/4.8.0.20230708": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-4DXUxmwJyIQiijl58xNdIOB0n34dRbgurL4sGNV0jCPk3W5W5DGANHN7Ex7T8uL/5Xfn5Tp1zq6Q/QztyuF6sw==",
+      "path": "opencvsharp4.windows/4.8.0.20230708",
+      "hashPath": "opencvsharp4.windows.4.8.0.20230708.nupkg.sha512"
+    },
+    "System.Memory/4.5.5": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-XIWiDvKPXaTveaB7HVganDlOCRoj03l+jrwNvcge/t8vhGYKvqV+dMv6G4SAX2NoNmN0wZfVPTAlFwZcZvVOUw==",
+      "path": "system.memory/4.5.5",
+      "hashPath": "system.memory.4.5.5.nupkg.sha512"
+    },
+    "System.Runtime.CompilerServices.Unsafe/6.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-/iUeP3tq1S0XdNNoMz5C9twLSrM/TH+qElHkXWaPvuNOt+99G75NrV0OS2EqHx5wMN7popYjpc8oTjC1y16DLg==",
+      "path": "system.runtime.compilerservices.unsafe/6.0.0",
+      "hashPath": "system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+    }
+  }
+}

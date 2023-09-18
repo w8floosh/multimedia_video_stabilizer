@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>Multimedia</id>
+    <version>1.0.0</version>
+    <authors>Multimedia</authors>
+    <description>Package Description</description>
+    <dependencies>
+      <group targetFramework="net6.0-windows7.0">
+        <dependency id="OpenCvSharp4.Windows" version="4.8.0.20230708" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+    <frameworkReferences>
+      <group targetFramework="net6.0-windows7.0">
+        <frameworkReference name="Microsoft.WindowsDesktop.App" />
+      </group>
+    </frameworkReferences>
+  </metadata>
+  <files>
+    <file src="C:\Users\Martin\source\repos\Multimedia\bin\Debug\net6.0-windows\Multimedia.runtimeconfig.json" target="lib\net6.0-windows7.0\Multimedia.runtimeconfig.json" />
+    <file src="C:\Users\Martin\source\repos\Multimedia\bin\Debug\net6.0-windows\Multimedia.dll" target="lib\net6.0-windows7.0\Multimedia.dll" />
+  </files>
+</package>
