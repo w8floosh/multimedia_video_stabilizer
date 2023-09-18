@@ -7,7 +7,11 @@ Uses shimat's OpenCV wrapper for .NET to implement video stabilization quality a
 evaluation framework for video stabilization methods" by Wilko Guilluy, Azeddine Beghdadi, and Laurent Oudre.
 
 References: 
+
 Work by Nghia Ho: https://nghiaho.com/?p=2093
+
 vidstab library: https://adamspannbauer.github.io/python_video_stab/html/index.html
+
 "A performance evaluation framework for video stabilization methods": https://ieeexplore.ieee.org/document/8611729
+
 OpenCVSharp by shimat: https://github.com/shimat/opencvsharp
